@@ -46,7 +46,7 @@ class Sql_op:
         sql = "select * from China_GDP"
         self.cursor.execute(sql)
 
-    def merge(self,stories1,stories2):
+
 
 
 
@@ -57,14 +57,17 @@ if __name__ == "__main__":
     cr = crawl.Crawl()
     op.connect()
     #op.tb_create()
+    cr.get_population()
     cr.get_GDP()
     #print cr.stories_cities
 
     #sql = "insert into city_code(city,code) values(%s,%s)"
     #op.tb_insert(cr.stories_cities,sql)
 
-    sql = "insert into population_code_time(population,code,time_year) values(%s,%s,%s)"
-    op.tb_insert(cr.stories_population,sql)
+    #sql = "insert into population_code_time(population,code,time_year) values(%s,%s,%s)"
+    #op.tb_insert(cr.stories_population,sql)
+    sql = "insert into GDP_code(GDP,code,time_year) values(%s,%s,%s)"
+    op.tb_insert(cr.stories_GDP,sql)
     #op.tb_list()
     op.close()
 
