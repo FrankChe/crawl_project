@@ -57,8 +57,10 @@ if __name__ == "__main__":
     cr = crawl.Crawl()
     op.connect()
     #op.tb_create()
-    cr.get_population()
-    cr.get_GDP()
+    #cr.get_population()
+    #cr.get_population_total()
+    cr.get_GDP_total()
+    #cr.get_GDP()
     #print cr.stories_cities
 
     #sql = "insert into city_code(city,code) values(%s,%s)"
@@ -66,8 +68,22 @@ if __name__ == "__main__":
 
     #sql = "insert into population_code_time(population,code,time_year) values(%s,%s,%s)"
     #op.tb_insert(cr.stories_population,sql)
-    sql = "insert into GDP_code(GDP,code,time_year) values(%s,%s,%s)"
-    op.tb_insert(cr.stories_GDP,sql)
+
+    # sql = "insert into GDP_code(GDP,code,time_year) values(%s,%s,%s)"
+    # op.tb_insert(cr.stories_GDP,sql)
+
+    # sql = "insert into population_total_data(data,code,time_year) values(%s,%s,%s)"
+    # op.tb_insert(cr.stories_population_total,sql)
+    #
+    # sql = "insert into population_total_type(type,code) values(%s,%s)"
+    # op.tb_insert(cr.stories_population_type,sql)
+
+    sql = "insert into GDP_total_code(GDP,code,time_year) values(%s,%s,%s)"
+    op.tb_insert(cr.stories_GDP_total,sql)
+
+    # sql = "insert into GDP_type_code(type,code) values(%s,%s)"
+    # op.tb_insert(cr.stories_GDP_type,sql)
+
     #op.tb_list()
     op.close()
 
